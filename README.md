@@ -1,12 +1,12 @@
 AutoBill API
 ===========
-The AutoBill API is constructed to strictly abide by the rules and the stylistic definitions of **REST (Representational State Transfer)**, which makes it a **REST API**.
-Through the usage of the AutoBill API, users can observe the system in the rawest and most accessible form. Manipulation of the endpoints five HTTP methods **(GET/POST/PUT/PATCH/DELETE)** is offered  
+The AutoBill API is constructed to strictly abide by the rules and the stylistic definitions of **REST (Representational State Transfer)**, making it a **REST API**.
+Users can observe the system in the rawest and most accessible form through the usage of this API. Manipulation of the endpoints is offered with five HTTP methods **(GET/POST/PUT/PATCH/DELETE)**, allowing the users to access AutoBill data in JSON form.
 
-- [Shopify API](#shopify-api)
+- [AutoBill API](#autobill-api)
 - [Usage](#usage)
-  * [Requirements](#requirements)
-    + [Ruby version](#ruby-version)
+  * [Prerequisites](#prerequisites)
+   <!-- +[Ruby version](#ruby-version) -->
   * [Installation](#installation)
   * [Getting Started](#getting-started)
     + [1) Create an app](#1-create-an-app)
