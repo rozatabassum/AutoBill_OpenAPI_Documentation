@@ -1,9 +1,7 @@
 AutoBill API
 ===========
-The AutoBill API is a REST API, constructed to strictly abide by the rules and stylistic definitions of **REST (Representational State Transfer)**. 
-The best way to consume the Shopify API is through GraphQL, which enables high volume mutations, bulk operations, and access to all new features.
-
-The REST API is implemented as JSON over HTTP using all four verbs (GET/POST/PUT/DELETE). Each resource, like Order, Product, or Collection, has a distinct URL and is manipulated in isolation. In other words, we’ve tried to make the API follow the REST principles as much as possible.
+The AutoBill API is constructed to strictly abide by the rules and the stylistic definitions of **REST (Representational State Transfer)**, which makes it a **REST API**.
+Through the usage of the AutoBill API, users can observe the system in the rawest and most accessible form. Manipulation of the endpoints five HTTP methods **(GET/POST/PUT/PATCH/DELETE)** is offered  
 
 - [Shopify API](#shopify-api)
 - [Usage](#usage)
