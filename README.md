@@ -9,9 +9,9 @@ Users can observe the system in the rawest and most accessible form through the 
    <!-- +[Ruby version](#ruby-version) -->
   * [Installation](#installation)
   * [Getting Started](#getting-started)
-    + [1) Create an app](#1-create-an-app)
-    + [2A) Private Apps](#2a-private-apps)
-    + [2B) Public and Custom Apps](#2b-public-and-custom-apps)
+    + [1) Create an application](#1-create-an-application)
+   <!-- + [2A) Private Apps](#2a-private-apps) -->
+   <!-- + [2) Public and Custom Apps](#2-public-and-custom-apps) -->
     + [3) Requesting access from a shop](#3-requesting-access-from-a-shop)
     + [4) Trading your `code` for an access token.](#4-trading-your--code--for-an-access-token)
     + [5) Activating the session](#5-activating-the-session)
