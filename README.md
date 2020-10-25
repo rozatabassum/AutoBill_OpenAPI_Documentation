@@ -32,52 +32,25 @@ Users can observe the system in the rawest and most accessible form through the 
 
 # Usage
 
-## Requirements
+## Prerequisites
 
-All API usage happens through Shopify applications, created by either shop owners for their shops, or by Shopify Partners for use by other shop owners:
+<!--All API usage happens through Shopify applications, created by either shop owners for their shops, or by Shopify Partners for use by other shop owners: -->
 
-* Shop owners can create applications for themselves through their admin: https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-private-app-credentials
-* Shopify Partners create applications through their admin: http://app.shopify.com/services/partners
 
-For more information and detailed documentation about the API visit https://developers.shopify.com/
-
-### Ruby version
-
-This gem requires Ruby 2.4 as of version 7.0.
 
 ## Installation
 
-Add `shopify_api` to your `Gemfile`:
 
-```ruby
-gem 'shopify_api'
-```
 
-Or install via [gem](http://rubygems.org/)
 
-```bash
-gem install shopify_api
-```
-
-Once the gem is installed, it must be added to your project by placing the following line in your app :
-
-```ruby
-require 'shopify_api'
-```
 
 ## Getting Started
 
-ShopifyAPI sessions need to be configured with a fully authorized URL of a particular store before they can start making API calls. To obtain that URL, you can follow these steps:
+AutoBill API needs to 
 
-### 1) Create an app
+### 1) Create an application
 
 First, create a new application in either the partners admin or your store admin. 
-
-**Private apps** are used for merchant-owned scripts and apps that run silently in the background on a single shop. Private apps aren't able to render any content in the admin. Private apps are created through the store admin.
-
-**Custom apps** are also used for a single shop, but they have access to [app extensions](https://shopify.dev/docs/app-extensions) that allow the app to render content in the admin and are managed and created through the partners dashboard.
-
-**Public apps** can be installed on many stores, and can be added to the Shopify App Store to generate revenue for the developer. 
 
 For a private app, you'll need the API_KEY and the PASSWORD; otherwise, you'll need the API_KEY and SHARED_SECRET.
 
