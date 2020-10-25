@@ -10,8 +10,6 @@ Users can observe the system in the rawest and most accessible form through the 
   * [Installation](#installation)
   * [Getting Started](#getting-started)
     + [1) Create an application](#1-create-an-application)
-   <!-- + [2A) Private Apps](#2a-private-apps) -->
-   <!-- + [2) Public and Custom Apps](#2-public-and-custom-apps) -->
     + [2) Enable all scopes](#2-enable-all-scopes)
     + [3) Authorization](#3-authorization)
     + [4) Executing request](#4-executing-request)
@@ -21,18 +19,12 @@ Users can observe the system in the rawest and most accessible form through the 
   * [Using cURL](#using-curl)
   * [Resources](#resources)
   * [Data validation in API](#data-validation-in-api)
-    + [Error handling](#error-handling)
-      - [1) HTTP status codes](#1-http-status-codes)
-      - [2) List of error codes and messages](#2-list-of-error-codes-and-messages)
-      - [3) Validation rules for AutoBill](#3-validation-rules-for-autobill) 
+    + [1) [Error handling](#error-handling)
+    + [1A) HTTP status codes](#1a-http-status-codes)
+    + [1B) List of error codes and messages](#1b-list-of-error-codes-and-messages)
+    + [1C) Validation rules for AutoBill](#1c-validation-rules-for-autobill) 
   * [Filter and Pagination](#filter-and-pagination)
-<!--- [Breaking Change Notices](#breaking-change-notices)
-  * [Breaking change notice for version 8.0.0](#breaking-change-notice-for-version-800)
-  * [Breaking change notice for version 7.0.0](#breaking-change-notice-for-version-700)
-    + [Changes to ShopifyAPI::Session](#changes-to-shopifyapi--session)
-    + [Changes to how to define resources](#changes-to-how-to-define-resources)
-    + [URL construction](#url-construction)
-    + [URLs that have not changed](#urls-that-have-not-changed)-->
+
 - [Using Development Version](#using-development-version)
 - [Additional Resources](#additional-resources)
 - [Copyright](#copyright)
