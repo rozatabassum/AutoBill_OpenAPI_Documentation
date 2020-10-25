@@ -17,7 +17,7 @@ Users can observe the system in the rawest and most accessible form through the 
     + [4B) Request with parameter](#4b-request-with-parameter)
     + [4C) Request with requestBody](#4c-request-with-requestBody) 
   * [Using cURL](#using-curl)
-  * [Response headers] (#response-headers)
+  * [Response headers](#response-headers)
   * [Resources](#resources)
   * [Data validation in API](#data-validation-in-api)
     + [1)  Error handling](#1-error-handling)
