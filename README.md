@@ -50,59 +50,59 @@ AutoBill API needs to
 
 ### 1) Create an application
 
-First, create a new application in either the partners admin or your store admin. 
+<!-- First, create a new application in either the partners admin or your store admin. -->
 
-For a private app, you'll need the API_KEY and the PASSWORD; otherwise, you'll need the API_KEY and SHARED_SECRET.
+<!-- For a private app, you'll need the API_KEY and the PASSWORD; otherwise, you'll need the API_KEY and SHARED_SECRET. -->
 
-   If you're not sure how to create a new application in the partner admin, visit the [tutorial in our documentation](https://shopify.dev/tutorials/authenticate-a-public-app-with-oauth#generate-credentials-from-your-partner-dashboard). For the instructions on generating a private app, visit the [tutorial on generating private credentials](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin)
+<!--   If you're not sure how to create a new application in the partner admin, visit the [tutorial in our documentation](https://shopify.dev/tutorials/authenticate-a-public-app-with-oauth#generate-credentials-from-your-partner-dashboard). For the instructions on generating a private app, visit the [tutorial on generating private credentials](https://shopify.dev/tutorials/authenticate-a-private-app-with-shopify-admin#generate-credentials-from-the-shopify-admin) -->
 
-### 2A) Private Apps
+### 2) Enable all scopes
 
-For a private App you just need to set the base site url as follows:
+<!--For a private App you just need to set the base site url as follows:
 
-   ```ruby
+<!--   ```ruby
    shop_url = "https://#{API_KEY}:#{PASSWORD}@#{SHOP_NAME}.myshopify.com"
    ShopifyAPI::Base.site = shop_url
    ShopifyAPI::Base.api_version = '<version_name>' # find the latest stable api_version here: https://shopify.dev/concepts/about-apis/versioning
-   ```
+   ``` -->
 
-   That's it; you're done! Next, skip to step 6 and start using the API!
+   <!--That's it; you're done! Next, skip to step 6 and start using the API!-->
 
-### 2B) Public and Custom Apps
+### 3) Authorization
    
-   For public and custom apps, you will need to supply two parameters to the Session class before you instantiate it:
+ <!--  For public and custom apps, you will need to supply two parameters to the Session class before you instantiate it: -->
 
-   ```ruby
+   <!-- ```ruby
    ShopifyAPI::Session.setup(api_key: API_KEY, secret: SHARED_SECRET)
-   ```
+   ``` -->
 
-   Shopify maintains [`omniauth-shopify-oauth2`](https://github.com/Shopify/omniauth-shopify-oauth2), which simplifies and securely wraps the OAuth flow and interactions with Shopify. Using this gem is the recommended way to use OAuth authentication in your application.
+  <!-- Shopify maintains [`omniauth-shopify-oauth2`](https://github.com/Shopify/omniauth-shopify-oauth2), which simplifies and securely wraps the OAuth flow and interactions with Shopify. Using this gem is the recommended way to use OAuth authentication in your application. -->
 
-### 3) Requesting access from a shop
+### 4) Executing request
 
-Public and Custom apps need an access token from each shop to access that shop's data. Getting an access token is a two-stage process. The first stage is to redirect the merchant to a **permission URL** to grant access to the app.
+<!--Public and Custom apps need an access token from each shop to access that shop's data. Getting an access token is a two-stage process. The first stage is to redirect the merchant to a **permission URL** to grant access to the app. -->
 
-   We've added the `create_permission_url` method to make this easier :
+  <!-- We've added the `create_permission_url` method to make this easier : -->
 
-   ```ruby
+<!--   ```ruby
    # We need to instantiate the session object before using it
-   shopify_session = ShopifyAPI::Session.new(domain: "SHOP_NAME.myshopify.com", api_version: api_version, token: nil)
+   shopify_session = ShopifyAPI::Session.new(domain: "SHOP_NAME.myshopify.com", api_version: api_version, token: nil) -->
    
-# Then, create a permission URL with the session
+<!--# Then, create a permission URL with the session
    permission_url = shopify_session.create_permission_url(scope, "https://my_redirect_uri.com", { state: "My Nonce" })
-   ```
+   ``` -->
    
-After creating the permission URL, the user should be directed to this URL to approve the app.
+<!--After creating the permission URL, the user should be directed to this URL to approve the app. -->
 
-Under the hood, the `create_permission_url` method is preparing the app to make the following request :
+<!-- Under the hood, the `create_permission_url` method is preparing the app to make the following request : -->
 
+<!--   ```
+   GET https://SHOP_NAME.myshopify.com/admin/oauth/authorize -->
    ```
-   GET https://SHOP_NAME.myshopify.com/admin/oauth/authorize
-   ```
 
-   with the following parameters:
+  <!-- with the following parameters: -->
 
-   * ``client_id`` – Required – The API key for your app
+  <!-- * ``client_id`` – Required – The API key for your app
    * ``scope`` – Required – The list of required scopes (explained here: https://shopify.dev/tutorials/authenticate-with-oauth#scopes)
    * ``redirect_uri`` – Required – The URL where you want to redirect the users after they authorize the client. The complete URL specified here must be identical to one of the Application Redirect URLs set in the app's section of the Partners dashboard.
    * ``state`` – Optional – A randomly selected value provided by your application, which is unique for each authorization request. During the OAuth callback phase, your application must check that this value matches the one you provided during authorization. [This mechanism is essential for the security of your application](https://tools.ietf.org/html/rfc6819#section-3.6).
@@ -122,19 +122,19 @@ Once authorized, the shop redirects the owner to the return URL of your applicat
 
    ```ruby
    token = shopify_session.request_token(params)
-   ```
+   ``` -->
 
-   This method will save the token to the session object and return it. All fields returned by Shopify, other than the access token itself, are stored in the session's `extra` attribute. For a list of all fields returned by Shopify, read [our OAuth documentation](https://shopify.dev/tutorials/authenticate-with-oauth#confirming-installation). 
+  <!-- This method will save the token to the session object and return it. All fields returned by Shopify, other than the access token itself, are stored in the session's `extra` attribute. For a list of all fields returned by Shopify, read [our OAuth documentation](https://shopify.dev/tutorials/authenticate-with-oauth#confirming-installation). 
    
-   If you prefer to exchange the token manually, you can make a POST request to the shop with the following parameters :
+   If you prefer to exchange the token manually, you can make a POST request to the shop with the following parameters : -->
 
-   ```
+ <!--  ```
    POST https://SHOP_NAME.myshopify.com/admin/oauth/access_token
-   ```
+   ``` -->
 
-   * ``client_id`` – Required – The API key for your app
+  <!-- * ``client_id`` – Required – The API key for your app
    * ``client_secret`` – Required – The shared secret for your app
-   * ``code`` – Required – The token you received in step 3
+   * ``code`` – Required – The token you received in step 3 
 
    You'll get your permanent access token back in the response.
 
@@ -148,10 +148,10 @@ Once authorized, the shop redirects the owner to the return URL of your applicat
    # the access scopes available to this user, which may be a subset of the access scopes granted to this app.
    active_scopes = shopify_session.extra['associated_user_scope']
    # the time at which this token expires; this is automatically converted from 'expires_in' returned by Shopify
-   expires_at = shopify_session.extra['expires_at']
-   ```
+   expires_at = shopify_session.extra['expires_at'] 
+   ``` -->
 
-   For the security of your application, after retrieving an access token, you must validate the following:
+  <!-- For the security of your application, after retrieving an access token, you must validate the following:
    1) The list of scopes in `shopify_session.extra['scope']` is the same as you requested.
    2) If you requested an online-mode access token, `shopify_session.extra['associated_user']` must be present.
    Failing either of these tests means the end-user may have tampered with the URL parameters during the OAuth authentication phase. You should avoid using this access token and revoke it immediately. If you use the [`omniauth-shopify-oauth2`](https://github.com/Shopify/omniauth-shopify-oauth2) gem, these checks are done automatically for you.
@@ -168,7 +168,7 @@ The session must be activated before use:
 
    ```ruby
    ShopifyAPI::Base.activate_session(shopify_session)
-   ```
+   ``` 
 
 ### 6A) Making requests to the GraphQL API
 
