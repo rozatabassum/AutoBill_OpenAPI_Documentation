@@ -58,13 +58,13 @@ AutoBill API needs to
 
 ### 2) Enable all scopes
 
-<!--For a private App you just need to set the base site url as follows:
+<!--For a private App you just need to set the base site url as follows: -->
 
-<!--   ```ruby
+   ```ruby
    shop_url = "https://#{API_KEY}:#{PASSWORD}@#{SHOP_NAME}.myshopify.com"
    ShopifyAPI::Base.site = shop_url
    ShopifyAPI::Base.api_version = '<version_name>' # find the latest stable api_version here: https://shopify.dev/concepts/about-apis/versioning
-   ``` -->
+   ``` 
 
    <!--That's it; you're done! Next, skip to step 6 and start using the API!-->
 
